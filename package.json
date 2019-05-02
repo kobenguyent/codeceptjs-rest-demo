@@ -1,0 +1,20 @@
+{
+  "name": "codeceptjs-rest-demo",
+  "version": "1.0.0",
+  "description": "CodeceptJS demo project with REST helper",
+  "main": "api_test.js",
+  "scripts": {
+    "test": "codeceptjs run"
+  },
+  "keywords": [
+    "codeceptjs",
+    "rest"
+  ],
+  "author": "peterngtr",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codeceptjs": "^2.1.0",
+    "faker": "^4.1.0"
+  }
+}
