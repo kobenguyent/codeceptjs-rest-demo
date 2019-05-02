@@ -28,6 +28,25 @@ To run all api tests just simply type
 $ npm start
 ```
 
+Example output
+```sh
+CodeceptJS v2.1.0
+Using test root "/Users/thanhnguyen/Desktop/codeceptjs-rest-demo"
+
+DELETE tests --
+  ✔ Verify deleting a user in 414ms
+GET tests --
+  ✔ Verify a successful call in 404ms
+  ✔ Verify a not found call in 204ms
+  ✔ Verify getting a single user in 510ms
+  ✔ Verify getting list of users in 513ms
+  ✔ Verify getting a single user in 354ms
+POST tests --
+  ✔ Verify creating new user in 370ms
+PUT tests --
+  ✔ Verify creating new user in 426ms
+  ```
+
 
 
 
