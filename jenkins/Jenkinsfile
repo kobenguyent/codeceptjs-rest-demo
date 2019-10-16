@@ -1,0 +1,17 @@
+node {
+
+    def imageTag = "PeterNgTr/rest-demo:${env.BUILD_NUMBER}"
+
+    stage("Initializing") {
+        checkout scm;
+        sh 'git reset --hard'
+    }
+
+    stage("Building Images") {
+        sh "docker build -t ${imageTag} -f docker/base/Dockerfile ."
+    }
+
+    stage("Running Tests") {
+        sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
+    }
+}

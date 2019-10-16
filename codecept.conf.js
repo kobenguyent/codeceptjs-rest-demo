@@ -12,5 +12,10 @@ exports.config = {
   include: {},
   bootstrap: null,
   mocha: {},
-  name: 'codeceptjs-rest-demo'
+  name: 'codeceptjs-rest-demo',
+  plugins: {
+    allure: {
+      enabled: true
+    }
+  }
 }
