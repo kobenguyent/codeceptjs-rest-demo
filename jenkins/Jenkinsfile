@@ -18,16 +18,8 @@ node {
     }
 
     stage('reports') {
-    steps {
-    script {
-            allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'test_report']]
-            ])
+        publishers {
+            allure(['test_report'])
+        }
     }
-    }
-}
 }
