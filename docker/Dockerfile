@@ -31,7 +31,7 @@ RUN export JAVA_HOME
 RUN mkdir -p /app/report
 COPY codecept.conf.js /app/
 COPY package.json /app/
-COPY tests /app/tests
+COPY test /app/tests
 COPY docker/run-tests.sh /app/docker/
 
 WORKDIR /app
