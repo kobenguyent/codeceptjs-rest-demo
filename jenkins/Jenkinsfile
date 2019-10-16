@@ -19,7 +19,7 @@ node {
 
     stage('reports') {
         allure([
-         results: [[path: 'test_report']]
+         results: [[path: 'allure-report']]
          ])
     }
 }
