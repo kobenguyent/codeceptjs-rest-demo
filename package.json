@@ -16,5 +16,8 @@
     "chai": "^4.2.0",
     "codeceptjs": "2.3.3",
     "faker": "^4.1.0"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.13.0"
   }
 }
