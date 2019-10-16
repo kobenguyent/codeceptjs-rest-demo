@@ -16,4 +16,18 @@ node {
     stage("Running Tests") {
         sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
     }
+
+    stage('reports') {
+    steps {
+    script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'test_report']]
+            ])
+    }
+    }
+}
 }
