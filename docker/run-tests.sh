@@ -2,4 +2,4 @@
 
 npx codeceptjs run --steps
 npx allure generate output -c -o report
-ls ./report
+ls report
