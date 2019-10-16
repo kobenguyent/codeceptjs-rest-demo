@@ -14,12 +14,15 @@ node {
     }
 
     stage("Running Tests") {
-        sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
+        try {
+            sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
+        }
+        finally {
+            sh "ls test_report/"
+            sleep(time:5,unit:"SECONDS")
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, includes: '**/*', keepAll: true, reportDir: 'test_report', reportFiles: 'index.html', reportName: 'Allure Report', reportTitles: ''])
+        }
     }
 
-    stage('reports') {
-        allure([
-         results: [[path: 'allure-report']]
-         ])
-    }
+
 }
