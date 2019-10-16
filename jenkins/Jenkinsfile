@@ -1,6 +1,6 @@
 node {
 
-    def imageTag = "PeterNgTr/rest-demo:${env.BUILD_NUMBER}"
+    def imageTag = "peterngtr/rest-demo:${env.BUILD_NUMBER}"
     def dockerHome = tool 'myDocker'
 
     stage("Initializing") {

@@ -7,7 +7,7 @@ mkdir test_report
 
 docker run --rm \
     -v "$(pwd)"/test_report:/app/report \
-    PeterNgTr/rest-demo:${VERSION}
+    peterngtr/rest-demo:${VERSION}
 
 status=$?
 
