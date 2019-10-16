@@ -1,0 +1,74 @@
+{
+  "uid" : "82992295179c5884",
+  "name" : "Verify creating new user",
+  "fullName" : "PUT tests:.Verify creating new user",
+  "historyId" : "bfe1b84ab9a2e4f01f4fc80f590b1b2f",
+  "time" : {
+    "start" : 1571239557263,
+    "stop" : 1571239557645,
+    "duration" : 382
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I send put request \"/api/users\", {\"name\":\"Lennie\",\"job\":\"leader\"}",
+      "time" : {
+        "start" : 1571239557461,
+        "stop" : 1571239557645,
+        "duration" : 184
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "null"
+  }, {
+    "name" : "suite",
+    "value" : "PUT tests:"
+  }, {
+    "name" : "testClass",
+    "value" : "PUT tests:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify creating new user"
+  }, {
+    "name" : "package",
+    "value" : "PUT tests:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "null" ]
+  },
+  "source" : "82992295179c5884.json",
+  "parameterValues" : [ ]
+}

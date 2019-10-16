@@ -1,0 +1,82 @@
+{
+  "uid" : "e008def542e3e1ed",
+  "name" : "Verify getting list of users",
+  "fullName" : "GET tests:.Verify getting list of users",
+  "historyId" : "9fa9c6209ff5c2e59bc772281fa7cc5c",
+  "time" : {
+    "start" : 1571239556813,
+    "stop" : 1571239556950,
+    "duration" : 137
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected 7 to deeply equal 4",
+  "statusTrace" : "AssertionError: expected 7 to deeply equal 4\n                    at Test.<anonymous> (/Users/thanhnguyen/Desktop/codeceptjs-rest-demo/test/GET_test.js:25:36)\n                    at processTicksAndRejections (internal/process/task_queues.js:89:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected 7 to deeply equal 4",
+    "statusTrace" : "AssertionError: expected 7 to deeply equal 4\n                    at Test.<anonymous> (/Users/thanhnguyen/Desktop/codeceptjs-rest-demo/test/GET_test.js:25:36)\n                    at processTicksAndRejections (internal/process/task_queues.js:89:5)",
+    "steps" : [ {
+      "name" : "I send get request \"/api/users?page=2\"",
+      "time" : {
+        "start" : 1571239556814,
+        "stop" : 1571239556948,
+        "duration" : 134
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "null"
+  }, {
+    "name" : "suite",
+    "value" : "GET tests:"
+  }, {
+    "name" : "testClass",
+    "value" : "GET tests:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify getting list of users"
+  }, {
+    "name" : "package",
+    "value" : "GET tests:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "null" ]
+  },
+  "source" : "e008def542e3e1ed.json",
+  "parameterValues" : [ ]
+}

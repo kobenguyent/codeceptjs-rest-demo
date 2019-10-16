@@ -1,0 +1,72 @@
+{
+  "uid" : "ab970cfeb9cee9f5",
+  "name" : "Verify getting a single user",
+  "fullName" : "GET tests:.Verify getting a single user",
+  "historyId" : "8802b9dfd2f967f8a9cfc8c1ab9e2af6",
+  "time" : {
+    "start" : 1571239556679,
+    "stop" : 1571239556813,
+    "duration" : 134
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I send get request \"/api/users/2\"",
+      "time" : {
+        "start" : 1571239556680,
+        "stop" : 1571239556812,
+        "duration" : 132
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "null"
+  }, {
+    "name" : "suite",
+    "value" : "GET tests:"
+  }, {
+    "name" : "testClass",
+    "value" : "GET tests:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify getting a single user"
+  }, {
+    "name" : "package",
+    "value" : "GET tests:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "null" ]
+  },
+  "source" : "ab970cfeb9cee9f5.json",
+  "parameterValues" : [ ]
+}

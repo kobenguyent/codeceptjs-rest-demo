@@ -1,0 +1,71 @@
+[ {
+  "uid" : "82992295179c5884",
+  "name" : "Verify creating new user",
+  "time" : {
+    "start" : 1571239557263,
+    "stop" : 1571239557645,
+    "duration" : 382
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8bf22f394d74a309",
+  "name" : "Verify a successful call",
+  "time" : {
+    "start" : 1571239556370,
+    "stop" : 1571239556481,
+    "duration" : 111
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e008def542e3e1ed",
+  "name" : "Verify getting list of users",
+  "time" : {
+    "start" : 1571239556813,
+    "stop" : 1571239556950,
+    "duration" : 137
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "667487cd37a7619d",
+  "name" : "Verify getting a single user",
+  "time" : {
+    "start" : 1571239556952,
+    "stop" : 1571239557068,
+    "duration" : 116
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5364e180501509c9",
+  "name" : "Verify deleting a user",
+  "time" : {
+    "start" : 1571239555906,
+    "stop" : 1571239556364,
+    "duration" : 458
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "af404c187aafc4ac",
+  "name" : "Verify creating new user",
+  "time" : {
+    "start" : 1571239557074,
+    "stop" : 1571239557260,
+    "duration" : 186
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9854391c8099eabb",
+  "name" : "Verify a not found call",
+  "time" : {
+    "start" : 1571239556482,
+    "stop" : 1571239556678,
+    "duration" : 196
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,74 @@
+{
+  "uid" : "af404c187aafc4ac",
+  "name" : "Verify creating new user",
+  "fullName" : "POST tests:.Verify creating new user",
+  "historyId" : "e4616acea662e2e8d996f6df899302ed",
+  "time" : {
+    "start" : 1571239557074,
+    "stop" : 1571239557260,
+    "duration" : 186
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I send post request \"/api/users\", {\"name\":\"Lennie\",\"job\":\"leader\"}",
+      "time" : {
+        "start" : 1571239557074,
+        "stop" : 1571239557260,
+        "duration" : 186
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "null"
+  }, {
+    "name" : "suite",
+    "value" : "POST tests:"
+  }, {
+    "name" : "testClass",
+    "value" : "POST tests:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify creating new user"
+  }, {
+    "name" : "package",
+    "value" : "POST tests:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "null" ]
+  },
+  "source" : "af404c187aafc4ac.json",
+  "parameterValues" : [ ]
+}
