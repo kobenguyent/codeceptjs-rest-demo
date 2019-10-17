@@ -22,7 +22,7 @@ Scenario('Verify getting a single user', async () => {
 Scenario('Verify getting list of users', async () => {
     const res = await I.sendGetRequest('/api/users?page=2');
     //to get the reponse data, use res.data.data
-    expect(res.data.data[0].id).to.eql(4);
+    expect(res.data.data[0].id).to.eql(7);
 });
 
 Scenario('Verify getting a single user', async () => {
