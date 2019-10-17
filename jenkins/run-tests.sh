@@ -6,7 +6,7 @@ echo "Pulling image ${VERSION}"
 mkdir report
 
 docker run --rm \
-    -v "$(pwd)"/report:/app/report \
+    -v "$(pwd)"/report/:/app/report/ \
     peterngtr/rest-demo:${VERSION}
 
 status=$?
