@@ -1,8 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Oct 16 17:25:56 CEST 2019","Wed Oct 16 17:25:56 CEST 2019","196","","GET tests:","","GET tests:","Verify a not found call","Verify a not found call",""
-"passed","Wed Oct 16 17:25:55 CEST 2019","Wed Oct 16 17:25:56 CEST 2019","458","","DELETE tests:","","DELETE tests:","Verify deleting a user","Verify deleting a user",""
-"passed","Wed Oct 16 17:25:56 CEST 2019","Wed Oct 16 17:25:56 CEST 2019","111","","GET tests:","","GET tests:","Verify a successful call","Verify a successful call",""
-"passed","Wed Oct 16 17:25:57 CEST 2019","Wed Oct 16 17:25:57 CEST 2019","382","","PUT tests:","","PUT tests:","Verify creating new user","Verify creating new user",""
-"passed","Wed Oct 16 17:25:57 CEST 2019","Wed Oct 16 17:25:57 CEST 2019","186","","POST tests:","","POST tests:","Verify creating new user","Verify creating new user",""
-"failed","Wed Oct 16 17:25:56 CEST 2019","Wed Oct 16 17:25:56 CEST 2019","137","","GET tests:","","GET tests:","Verify getting list of users","Verify getting list of users",""
-"passed","Wed Oct 16 17:25:56 CEST 2019","Wed Oct 16 17:25:57 CEST 2019","116","","GET tests:","","GET tests:","Verify getting a single user","Verify getting a single user",""
