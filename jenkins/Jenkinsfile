@@ -5,6 +5,7 @@ node {
 
     stage("Initializing") {
         checkout scm;
+        cleanWs();
         sh 'git reset --hard'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
