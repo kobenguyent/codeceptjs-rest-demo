@@ -4,8 +4,8 @@ node {
     def dockerHome = tool 'myDocker'
 
     stage("Initializing") {
-        checkout scm;
         cleanWs();
+        checkout scm;
         sh 'git reset --hard'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
