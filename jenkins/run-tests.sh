@@ -3,10 +3,10 @@
 VERSION=${1:-latest}
 
 echo "Pulling image ${VERSION}"
-mkdir allure-results
+mkdir report
 
 docker run --rm \
-    -v "$(pwd)"/allure-results:/app/allure-results \
+    -v "$(pwd)"/report:/app/report \
     peterngtr/rest-demo:${VERSION}
 
 status=$?
