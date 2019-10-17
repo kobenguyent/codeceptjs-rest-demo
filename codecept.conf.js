@@ -15,7 +15,6 @@ exports.config = {
   name: 'codeceptjs-rest-demo',
   plugins: {
     allure: {
-      outputDir: 'allure-report',
       enabled: true
     }
   }
