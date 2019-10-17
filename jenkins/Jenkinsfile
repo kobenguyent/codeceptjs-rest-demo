@@ -19,8 +19,7 @@ node {
         }
         finally {
             sh "ls test_report/"
-            sleep(time:5,unit:"SECONDS")
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, includes: '**/*', keepAll: true, reportDir: 'test_report', reportFiles: 'index.html', reportName: 'Allure Report', reportTitles: ''])
+            allure includeProperties: false, jdk: '', report: 'report', results: [[path: 'allure-results']]
         }
     }
 
