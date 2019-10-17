@@ -28,7 +28,6 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
-RUN mkdir -p /app/report
 COPY codecept.conf.js /app/
 COPY package.json /app/
 COPY test /app/tests
