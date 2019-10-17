@@ -1,13 +1,13 @@
 node {
 
     def imageTag = "peterngtr/rest-demo:${env.BUILD_NUMBER}"
-    //def dockerHome = tool 'myDocker'
+    def dockerHome = tool 'myDocker'
 
     stage("Initializing") {
         cleanWs();
         checkout scm;
         sh 'git reset --hard'
-        //env.PATH = "${dockerHome}/bin:${env.PATH}"
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
 
     stage("Building Images") {
