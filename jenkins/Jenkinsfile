@@ -16,12 +16,10 @@ node {
 
     stage("Running Tests") {
         try {
-            sh "npm i"
-            sh "npx codeceptjs run --steps"
-            sh "npx allure generate output -o report"
+            sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
         }
         finally {
-            sh "ls report"
+            sh "ls report/"
             // allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
     }
