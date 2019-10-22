@@ -4,7 +4,7 @@
 This project demonstrates how to use CodeceptJS with REST helper.
 
 ## How to use
-This is done using CodeceptJS https://codecept.io/
+This is done using CodeceptJS <https://codecept.io/>
 
 ### Tech
 This test uses a number of open source projects to work properly:
@@ -48,8 +48,3 @@ POST tests --
 PUT tests --
   ✔ Verify creating new user in 426ms
 ```
-
-
-
-
-

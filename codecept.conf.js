@@ -1,9 +1,9 @@
 exports.config = {
-	tests: './*/*_test.js',
-	output: './output',
+	tests: "./*/*_test.js",
+	output: "./output",
 	helpers: {
 		REST: {
-			endpoint: 'https://reqres.in',
+			endpoint: "https://reqres.in",
 			onRequest: () => {
 				//request.headers.auth = "123";
 			}
@@ -12,10 +12,10 @@ exports.config = {
 	include: {},
 	bootstrap: null,
 	mocha: {},
-	name: 'codeceptjs-rest-demo',
+	name: "codeceptjs-rest-demo",
 	plugins: {
 		allure: {
-			outputDir: 'report',
+			outputDir: "report",
 			enabled: true
 		}
 	}
