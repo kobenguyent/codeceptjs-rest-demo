@@ -1,5 +1,7 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb3182c5d5014093be06ffbd4bf7eb6f)](https://www.codacy.com/manual/PeterNgTr/codeceptjs-rest-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PeterNgTr/codeceptjs-rest-demo&amp;utm_campaign=Badge_Grade)
+
 # Introduction
-Demo project demonstrates how to use CodeceptJS with REST helper.
+This project demonstrates how to use CodeceptJS with REST helper.
 
 # How to use
 This is done using CodeceptJS https://codecept.io/
@@ -25,7 +27,7 @@ $ npm i
 To run all api tests just simply type
 
 ```sh
-$ npm start
+$ npm test
 ```
 
 Example output
@@ -45,7 +47,7 @@ POST tests --
   ✔ Verify creating new user in 370ms
 PUT tests --
   ✔ Verify creating new user in 426ms
-  ```
+```
 
 
 
