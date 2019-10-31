@@ -15,12 +15,13 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "codeceptjs": "2.3.3",
+    "codeceptjs": "2.3.5",
     "eslint": "^6.5.1",
     "eslint-plugin-codeceptjs": "^1.1.0",
     "faker": "^4.1.0"
   },
   "dependencies": {
-    "allure-commandline": "^2.13.0"
+    "allure-commandline": "^2.13.0",
+    "form-data": "^2.5.1"
   }
 }
