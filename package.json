@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "allure-commandline": "^2.13.0",
-    "form-data": "^2.5.1"
+    "form-data": "^3.0.0"
   }
 }
