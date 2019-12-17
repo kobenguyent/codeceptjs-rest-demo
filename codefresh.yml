@@ -3,7 +3,7 @@ steps:
   main_clone:
     type: "git-clone"
     description: "Cloning main repository..."
-    repo: "PeterNgTr/codeceptjs-rest-demo"
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
     revision: "${{CF_BRANCH}}"
   my_deps:
     image: 'node:12'
