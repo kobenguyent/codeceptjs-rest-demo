@@ -1,0 +1,17 @@
+version: "1.0"
+steps:
+  main_clone:
+    type: "git-clone"
+    description: "Cloning main repository..."
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
+    revision: "${{CF_BRANCH}}"
+  my_deps:
+    image: 'node:12'
+    title: "Installing dependencies"
+    commands:
+      - 'npm install'
+  my_tests:
+    image: 'node:12'
+    title: "Integration tests"
+    commands:
+      - 'npm test'
