@@ -19,9 +19,9 @@ steps:
     dockerVersion: '17.09.0-ce'
 
 - script: |
-    docker run -p 4040:4040 -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY="TRUE" -v ${PWD}/output:/app/allure-results frankescobar/allure-docker-service
     npm install
     npm test
+    docker run -p 4040:4040 -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY="TRUE" -v ${PWD}/output:/app/allure-results frankescobar/allure-docker-service
   displayName: 'Run tests'
 - task: AllureGenerate@1
   inputs:
