@@ -14,8 +14,12 @@ steps:
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 
 - script: |
+    docker run -p 4040:4040 -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY="TRUE" -v ${PWD}/output:/app/allure-results frankescobar/allure-docker-service
     npm install
     npm test
   displayName: 'Run tests'
