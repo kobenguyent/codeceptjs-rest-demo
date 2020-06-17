@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint . --fix",
     "test": "codeceptjs run",
-    "load-test": "k6 run load-tests/scenario-1.js "
+    "api-load-test": "k6 run load-tests/scenario-1.js",
+    "generate-report": "allure generate output"
   },
   "keywords": [
     "codeceptjs",
@@ -22,6 +23,7 @@
     "faker": "^4.1.0"
   },
   "dependencies": {
+    "allure": "0.0.0",
     "allure-commandline": "^2.13.0",
     "form-data": "^3.0.0"
   }
