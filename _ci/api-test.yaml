@@ -1,0 +1,15 @@
+api-test:
+    stage: test
+    before_script:
+      - npm i
+    script:
+      - npm run test
+    after_script:
+      - npm run generate-report
+      - cp -r allure-report/ ci_artifacts/
+    artifacts:
+      name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
+      paths:
+        - ci_artifacts/
+      when: always
+  

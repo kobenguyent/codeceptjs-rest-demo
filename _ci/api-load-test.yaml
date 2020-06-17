@@ -1,0 +1,5 @@
+api-load-test:
+    stage: test
+    script:
+      - npm run api-load-test
+  
