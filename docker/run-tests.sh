@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-npx codeceptjs run --steps
+npm run load-test && npx codeceptjs run --steps
 ls report

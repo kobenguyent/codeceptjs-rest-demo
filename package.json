@@ -5,7 +5,8 @@
   "main": "api_test.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "test": "codeceptjs run"
+    "test": "codeceptjs run",
+    "load-test": "k6 run load-tests/scenario-1.js "
   },
   "keywords": [
     "codeceptjs",
