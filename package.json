@@ -4,9 +4,11 @@
   "description": "CodeceptJS demo project with REST helper",
   "main": "api_test.js",
   "scripts": {
+    "def": "codeceptjs def",
     "lint": "eslint . --fix",
     "test": "codeceptjs run",
-    "load-test": "k6 run load-tests/scenario-1.js "
+    "api-load-test": "k6 run load-tests/scenario-1.js",
+    "generate-report": "allure generate output"
   },
   "keywords": [
     "codeceptjs",
@@ -16,12 +18,15 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "codeceptjs": "2.6.5",
     "eslint": "^6.5.1",
     "eslint-plugin-codeceptjs": "^1.1.0",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "codeceptjs": "^3.0.0-beta.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
+    "allure": "0.0.0",
     "allure-commandline": "^2.13.0",
     "form-data": "^3.0.0"
   }

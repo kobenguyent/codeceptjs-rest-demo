@@ -1,5 +1,5 @@
 exports.config = {
-	tests: "./*/*_test.js",
+	tests: "./*/*_test.ts",
 	output: "./output",
 	helpers: {
 		REST: {
