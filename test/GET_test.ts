@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const {I} = inject();
+const { I } = inject();
 
 Feature('GET tests');
 

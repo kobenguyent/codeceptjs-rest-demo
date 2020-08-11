@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const faker = require('faker');
-const {I} = inject();
+const { I } = inject();
 let userData;
 let createdUser;
 
