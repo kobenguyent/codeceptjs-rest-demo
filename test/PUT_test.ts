@@ -1,21 +1,20 @@
-const expect = require('chai').expect;
 const faker = require('faker');
 const { I } = inject();
-let userData;
+let userData:any;
 
 Feature('PUT tests');
 
-Before(() => {
+Before(async () => {
 	userData = {
 		name: faker.name.firstName(),
 		job: 'leader'
 	};
 
-	I.sendPostRequest('/api/users', userData);
+	await I.createNewUser(userData);
 });
 
 Scenario('Verify creating new user', async () => {
-	userData.name = faker.name.firstName();
+	userData['name'] = faker.name.firstName();
 	const res = await I.sendPutRequest('/api/users', userData);
-	expect(res.data.name).to.eql(userData.name);
+	I.assertEqual(res.data.name, userData['name']);
 });
