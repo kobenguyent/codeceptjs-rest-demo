@@ -10,9 +10,6 @@ exports.config = {
 				//request.headers.auth = "123";
 			}
 		},
-		ExpectWrapper: {
-			require: './ExpectWrapper.ts'
-		}
 	},
 	include: {
 		I: './steps_file.ts'

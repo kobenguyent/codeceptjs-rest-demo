@@ -38,22 +38,22 @@ npm test
 Example output
 
 ```sh
-CodeceptJS v3.0.0-beta.4
-Using test root "/Users/thanhnguyen/Desktop/codeceptjs-rest-demo"
+CodeceptJS v3.0.4
+Using test root "/Users/tamara-thanh/Desktop/codeceptjs-rest-demo"
 
 DELETE tests --
-  ✔ Verify deleting a user in 142ms
+  ✔ Verify deleting a user in 168ms
 GET tests --
-  ✔ Verify a successful call in 119ms
-  ✔ Verify a not found call in 143ms
-  ✔ Verify getting a single user in 100ms
-  ✔ Verify getting list of users in 97ms
-  ✔ Verify getting a single user in 92ms
+  ✔ Verify a successful call in 122ms
+  ✔ Verify a not found call in 146ms
+  ✔ Verify getting a single user in 102ms
+  ✔ Verify getting list of users in 108ms
 POST tests --
-  ✔ Verify creating new user in 136ms
-  ✔ Verify uploading a file in 972ms
+  ✔ Verify creating new user in 152ms
+  ✔ Verify uploading a file in 891ms
 PUT tests --
-  ✔ Verify creating new user in 141ms
+  ✔ Verify creating new user in 143ms
 
-  OK  | 9 passed   // 3s
+  OK  | 8 passed   // 2s
+
 ```

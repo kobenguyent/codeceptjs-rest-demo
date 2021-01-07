@@ -1,5 +1,6 @@
 const { actor } = require('codeceptjs');
 const faker = require('faker');
+import ex from 'codeceptjs-expectwrapper';
 
 export = function () {
     return actor({
@@ -11,5 +12,5 @@ export = function () {
 
             return this.sendPostRequest('/api/users', payload);
         }
-    });
+    , ...ex});
 }
