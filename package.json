@@ -17,10 +17,10 @@
   "author": "peterngtr",
   "license": "ISC",
   "devDependencies": {
+    "codeceptjs": "3.0.5",
     "eslint": "^6.5.1",
     "eslint-plugin-codeceptjs": "^1.1.0",
     "faker": "^4.1.0",
-    "codeceptjs": "3.0.4",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
@@ -29,6 +29,7 @@
     "allure": "0.0.0",
     "allure-commandline": "^2.13.0",
     "codeceptjs-expectwrapper": "^1.0.1",
+    "codeceptjs-testrail": "^1.7.0",
     "expect": "^26.6.2",
     "form-data": "^3.0.0"
   }

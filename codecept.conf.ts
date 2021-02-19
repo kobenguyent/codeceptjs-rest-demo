@@ -21,6 +21,15 @@ exports.config = {
 		allure: {
 			outputDir: 'report',
 			enabled: true
+		},
+		testrail: {
+			require: 'codeceptjs-testrail',
+			host: 'https://thanhtamara.testrail.io',
+			user: 'thanh.nguyen+testrail@tamara.co',
+			password: process.env.TR,
+			suiteId: 1,
+			projectId: 1,
+			enabled: true
 		}
 	}
 };

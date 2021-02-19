@@ -3,7 +3,7 @@ const { I } = inject();
 
 Feature('GET tests');
 
-Scenario('Verify a successful call', async () => {
+Scenario('Verify a successful call @C2', async () => {
 	const res = await I.sendGetRequest('/api/users?page=2');
 	await I.assertEqual(res.status, 200);
 });
