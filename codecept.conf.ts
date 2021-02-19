@@ -30,6 +30,7 @@ exports.config = {
 			suiteId: 1,
 			projectId: 1,
 			plan: {
+				existingPlanId: 15,
 				name: 'Custom Plan name',
 				description: 'Something about your plan',
 			},
