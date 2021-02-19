@@ -7,7 +7,7 @@
     "def": "codeceptjs def",
     "lint": "eslint . --fix",
     "test": "codeceptjs run",
-    "parallel-test": "codeceptjs run-workers 10 --suites",
+    "parallel-test": "codeceptjs run-workers 5 --suites",
     "api-load-test": "k6 run load-tests/scenario-1.js",
     "generate-report": "allure generate output"
   },
