@@ -29,6 +29,10 @@ exports.config = {
 			password: process.env.TR,
 			suiteId: 1,
 			projectId: 1,
+			plan: {
+				name: 'Custom Plan name',
+				description: 'Something about your plan',
+			},
 			enabled: true
 		}
 	}
