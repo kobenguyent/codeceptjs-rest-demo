@@ -10,6 +10,7 @@ exports.config = {
 				//request.headers.auth = "123";
 			}
 		},
+		JSONResponse: {}
 	},
 	include: {
 		I: './steps_file.ts'
