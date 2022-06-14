@@ -15,6 +15,6 @@ Before(async () => {
 
 Scenario('Verify creating new user', async () => {
 	userData['name'] = faker.name.firstName();
-	const res = await I.sendPutRequest('/api/users', userData);
+	const res = await I.sendPutRequest('/api/users/2', userData);
 	await I.assertEqual(res.data.name, userData['name']);
 });
