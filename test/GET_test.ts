@@ -16,10 +16,6 @@ Scenario('Verify a not found call', async () => {
 Scenario('Verify getting a single user', async () => {
 	const res = await I.sendGetRequest('/api/users/2');
 	await I.assertEqual(res.data.data.id, 2);
-
-	await I.seeResponseValidByCallback(({data, status, expect}) => {
-		expect(data.id, )
-	})
 });
 
 Scenario('Verify getting list of users', async () => {
