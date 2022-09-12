@@ -12,13 +12,13 @@ This is done using CodeceptJS <https://codecept.io/>
 
 This test uses a number of open source projects to work properly:
 
-*<https://nodejs.org/en/> - evented I/O for the backend
-*<https://codecept.io/> - CodeceptJS
-*<https://reqres.in/> - Endpoints that are used in this porject
+* <https://nodejs.org/en/> - evented I/O for the backend
+* <https://codecept.io/> - CodeceptJS
+* <https://reqres.in/> - Endpoints that are used in this project
 
 ### Installation
 
-This requires [Node.js](https://nodejs.org/) v8+ to run.
+This requires [Node.js](https://nodejs.org/) v12+ to run.
 
 Install the dependencies and devDependencies.
 
@@ -38,22 +38,21 @@ npm test
 Example output
 
 ```sh
-CodeceptJS v3.0.4
+CodeceptJS v3.3.5 #StandWithUkraine
 Using test root "/Users/tamara-thanh/Desktop/codeceptjs-rest-demo"
 
 DELETE tests --
-  ✔ Verify deleting a user in 168ms
+  ✔ Verify deleting a user in 976ms
 GET tests --
-  ✔ Verify a successful call in 122ms
-  ✔ Verify a not found call in 146ms
-  ✔ Verify getting a single user in 102ms
-  ✔ Verify getting list of users in 108ms
+  ✔ Verify a successful call in 588ms
+  ✔ Verify a not found call in 978ms
+  ✔ Verify getting a single user in 591ms
+  ✔ Verify getting list of users in 583ms
 POST tests --
-  ✔ Verify creating new user in 152ms
-  ✔ Verify uploading a file in 891ms
+  ✔ Verify creating new user in 942ms
+  ✔ Verify uploading a file in 4343ms
 PUT tests --
-  ✔ Verify creating new user in 143ms
+  ✔ Verify creating new user in 923ms
 
-  OK  | 8 passed   // 2s
-
+  OK  | 8 passed   // 12s
 ```
