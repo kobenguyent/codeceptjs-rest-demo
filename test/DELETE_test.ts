@@ -11,6 +11,6 @@ Before(async () => {
 Scenario('Verify deleting a user', async () => {
 	let id = createdUser['data']['id'];
 	const res = await I.sendDeleteRequest(`/api/users/${id}`);
-	await I.seeResponseCodeIsSuccessful();
+	I.seeResponseCodeIsSuccessful();
 	await I.assertEqual(res.data, '');
 });

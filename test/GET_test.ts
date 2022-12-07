@@ -5,12 +5,13 @@ Feature('GET tests');
 
 Scenario('Verify a successful call', async () => {
 	await I.sendGetRequest('/api/users?page=2');
-	await I.seeResponseCodeIsSuccessful();
+	I.seeResponseCodeIsSuccessful();
+	I.seeResponseContainsJson({page:2,per_page:6})
 });
 
 Scenario('Verify a not found call', async () => {
-	const res = await I.sendGetRequest('/api/users/266');
-	await I.seeResponseCodeIsClientError();
+	I.sendGetRequest('/api/users/266');
+	I.seeResponseCodeIsClientError();
 });
 
 Scenario('Verify getting a single user', async () => {
