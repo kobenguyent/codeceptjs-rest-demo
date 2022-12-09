@@ -3,8 +3,8 @@ const fs = require('fs');
 Feature('POST tests');
 
 Scenario('Verify creating new user', async ({ I }) => {
-	await I.createNewUser();
-	I.seeResponseCodeIsSuccessful();
+	const user = await I.have('user', null, null);
+	I.assertNotEqual(user.id, undefined);
 });
 
 Scenario('Verify uploading a file', async ({ I }) => {

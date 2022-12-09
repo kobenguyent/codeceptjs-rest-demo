@@ -5,7 +5,21 @@ export const config: CodeceptJS.MainConfig = {
     REST: {
       endpoint: 'https://reqres.in'
     },
-    JSONResponse: {}
+    JSONResponse: {},
+    ApiDataFactory: {
+      endpoint: "https://reqres.in",
+      cleanup: false,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      factories: {
+        user: {
+          factory: "./factories/user",
+          create: (data) => ({ method: 'POST',  url: '/api/users', data })
+        },
+      }
+   }
   },
   include: {
     I: './steps_file.ts'

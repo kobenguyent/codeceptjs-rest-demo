@@ -3,7 +3,7 @@ const faker = require('faker');
 import ex from 'codeceptjs-expectwrapper';
 const FormData = require('form-data');
 
-module.exports = function () {
+export = function () {
     return actor({
         async createNewUser(userData:object) {
             let payload = userData || {
