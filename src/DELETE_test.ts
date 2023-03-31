@@ -1,4 +1,4 @@
-export {};
+export {}
 const { I } = inject();
 let createdUser:any;
 
@@ -12,5 +12,5 @@ Scenario('Verify deleting a user', async () => {
 	let id = createdUser['data']['id'];
 	const res = await I.sendDeleteRequest(`/api/users/${id}`);
 	I.seeResponseCodeIsSuccessful();
-	await I.assertEqual(res.data, '');
+	await I.expectEqual(res.data, '');
 });

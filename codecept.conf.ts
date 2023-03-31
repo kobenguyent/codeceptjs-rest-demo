@@ -6,6 +6,9 @@ export const config: CodeceptJS.MainConfig = {
       endpoint: 'https://reqres.in'
     },
     JSONResponse: {},
+    ExpectHelper: {
+      require: 'codeceptjs-expect'
+    },
     ApiDataFactory: {
       endpoint: "https://reqres.in",
       cleanup: false,
@@ -22,7 +25,7 @@ export const config: CodeceptJS.MainConfig = {
    }
   },
   include: {
-    I: './steps_file.ts'
+    I: './stepObjects/custom.steps.ts'
   },
   name: 'codeceptjs-rest-demo',
   plugins: {
