@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb3182c5d5014093be06ffbd4bf7eb6f)](https://www.codacy.com/manual/PeterNgTr/codeceptjs-rest-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PeterNgTr/codeceptjs-rest-demo&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/PeterNgTr/codeceptjs-rest-demo.svg?branch=master)](https://travis-ci.org/PeterNgTr/codeceptjs-rest-demo) [![Greenkeeper badge](https://badges.greenkeeper.io/PeterNgTr/codeceptjs-rest-demo.svg)](https://greenkeeper.io/)[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/peternguyew)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb3182c5d5014093be06ffbd4bf7eb6f)](https://www.codacy.com/manual/PeterNgTr/codeceptjs-rest-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PeterNgTr/codeceptjs-rest-demo&amp;utm_campaign=Badge_Grade)[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/peternguyew)
 
 # Introduction
 
@@ -18,7 +18,7 @@ This test uses a number of open source projects to work properly:
 
 ### Installation
 
-This requires [Node.js](https://nodejs.org/) v12+ to run.
+This requires [Node.js](https://nodejs.org/) v16+ to run.
 
 Install the dependencies and devDependencies.
 
@@ -38,21 +38,21 @@ npm test
 Example output
 
 ```sh
-CodeceptJS v3.3.5 #StandWithUkraine
-Using test root "/Users/tamara-thanh/Desktop/codeceptjs-rest-demo"
+CodeceptJS v3.4.1 #StandWithUkraine
+Using test root "/Users/thanh.nguyen/Desktop/codeceptjs-rest-demo"
 
 DELETE tests --
-  ✔ Verify deleting a user in 976ms
+  ✔ Verify deleting a user in 136ms
 GET tests --
-  ✔ Verify a successful call in 588ms
-  ✔ Verify a not found call in 978ms
-  ✔ Verify getting a single user in 591ms
-  ✔ Verify getting list of users in 583ms
+  ✔ Verify a successful call in 126ms
+  ✔ Verify a not found call in 124ms
+  ✔ Verify getting a single user in 180ms
+  ✔ Verify getting list of users in 65ms
 POST tests --
-  ✔ Verify creating new user in 942ms
-  ✔ Verify uploading a file in 4343ms
+  ✔ Verify creating new user in 131ms
+  ✔ Verify uploading a file in 5789ms
 PUT tests --
-  ✔ Verify creating new user in 923ms
+  ✔ Verify creating new user in 118ms
 
-  OK  | 8 passed   // 12s
+  OK  | 8 passed   // 7s
 ```

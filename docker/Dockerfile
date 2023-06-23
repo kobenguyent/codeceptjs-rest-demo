@@ -1,4 +1,4 @@
-FROM peternguyentr/node-java-chrome:latest
+FROM peternguyentr/playwright-node-java:latest
 
 # Fix certificate issues
 RUN apt-get update --no-install-recommends && \

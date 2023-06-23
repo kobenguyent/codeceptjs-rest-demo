@@ -30,8 +30,8 @@ export const config: CodeceptJS.MainConfig = {
   name: 'codeceptjs-rest-demo',
   plugins: {
     allure: {
-      outputDir: 'report',
-      enabled: true
+      enabled: true,
+      require: '@codeceptjs/allure-legacy',
     }
   }
 }
