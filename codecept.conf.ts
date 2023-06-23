@@ -3,7 +3,8 @@ export const config: CodeceptJS.MainConfig = {
   output: './output',
   helpers: {
     REST: {
-      endpoint: 'https://reqres.in'
+      endpoint: 'https://reqres.in',
+      timeout: 20_000
     },
     JSONResponse: {},
     ExpectHelper: {
