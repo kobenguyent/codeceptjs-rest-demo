@@ -56,3 +56,6 @@ PUT tests --
 
   OK  | 8 passed   // 7s
 ```
+
+### Report 
+Allure report: https://kobenguyent.github.io/codeceptjs-rest-demo/
