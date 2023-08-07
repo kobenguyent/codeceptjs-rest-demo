@@ -32,5 +32,13 @@
     "allure-patch": "^1.0.3",
     "codeceptjs-expect": "^1.0.0",
     "form-data": "^3.0.0"
+  },
+  "files": [
+    "stepObjects/*",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kobenguyent/codeceptjs-rest-demo.git"
   }
 }

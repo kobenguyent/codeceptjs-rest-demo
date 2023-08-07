@@ -1,3 +1,5 @@
+import userSteps from './userSteps';
+
 const faker = require('faker');
 const FormData = require('form-data');
 
@@ -15,6 +17,7 @@ export = () => {
             let form = new FormData();
             form.append(key, value);
             return form;
-        }
+        },
+        ...userSteps
     });
 }
