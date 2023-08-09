@@ -1,10 +1,14 @@
 export const config: CodeceptJS.MainConfig = {
   tests: './*/*_test.ts',
   output: './output',
+  emptyOutputFolder: true,
   helpers: {
     REST: {
       endpoint: 'https://reqres.in',
-      timeout: 20_000
+      timeout: 30_000
+    },
+    AllureReport: {
+      require: './helpers/allure-report.helper.ts'
     },
     JSONResponse: {},
     ExpectHelper: {

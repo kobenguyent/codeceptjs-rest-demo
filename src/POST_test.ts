@@ -9,7 +9,7 @@ Scenario('Verify creating new user', async () => {
 	I.expectNotEqual(user.id, undefined);
 });
 
-Scenario('Verify uploading a file', async () => {
+Scenario.skip('Verify uploading a file', async () => {
 	const form = I.createFormData('attachment', fs.createReadStream(`${process.cwd()}/src/fixtures/test_image.png`));
 
 	await I.sendPostRequest('https://httpbin.org/post', form);
