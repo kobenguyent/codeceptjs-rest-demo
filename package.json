@@ -2,11 +2,13 @@
   "name": "codeceptjs-rest-demo",
   "version": "1.0.0",
   "description": "CodeceptJS demo project with REST helper",
+  "main": "dist/stepObjects/index.js",
   "scripts": {
     "def": "codeceptjs def",
     "lint": "eslint . --fix",
     "test": "codeceptjs run",
     "api-load-test": "k6 run load-tests/scenario-1.js",
+    "compile": "tsc",
     "allure-reports-generate": "allure generate ./output -o ./output/allure --clean",
     "allure-reports-patch": "allure-patch ./output/allure",
     "processData": "npx ts-node prometheus/processData.ts",
@@ -37,7 +39,7 @@
     "ua-parser-js": "^1.0.35"
   },
   "files": [
-    "stepObjects/*",
+    "dist/stepObjects/*",
     "README.md"
   ],
   "repository": {

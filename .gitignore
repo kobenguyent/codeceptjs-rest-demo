@@ -3,3 +3,4 @@ output/*
 package-lock.json
 report/*
 .idea
+dist
