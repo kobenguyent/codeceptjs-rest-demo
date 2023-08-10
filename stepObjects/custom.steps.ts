@@ -1,4 +1,4 @@
-import userSteps from './userSteps';
+import { userSteps } from './index';
 
 const faker = require('faker');
 const FormData = require('form-data');
