@@ -1,4 +1,4 @@
-export const userSteps = {
+const userSteps = {
   async getUserPerPage(page = 2) {
     return this.sendGetRequest(`/api/users?page=${page}`);
   },
@@ -7,3 +7,5 @@ export const userSteps = {
     return this.sendGetRequest(`/api/users/${id}`);
   }
 }
+
+export default userSteps;
