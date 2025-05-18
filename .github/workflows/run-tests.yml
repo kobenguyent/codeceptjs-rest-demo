@@ -45,7 +45,6 @@ jobs:
         run: |
           npm i
       - name: Run tests
-        working-directory: ./test
         run: |
           npm i && npx playwright install
           npm run test && npm run allure-reports-generate && npm run allure-reports-patch
@@ -56,14 +55,14 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Check artifact directory
         run: |
-          if [ ! -d "./test/output/allure" ]; then
+          if [ ! -d "./output/allure" ]; then
             echo "Artifact directory not found. Exiting."
             exit 1
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './test/output/allure'
+          path: './output/allure'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
