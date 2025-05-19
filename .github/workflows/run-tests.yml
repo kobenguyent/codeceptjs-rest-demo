@@ -37,6 +37,7 @@ jobs:
     outputs:
       found: ${{ steps.get-artifact.outputs.found }}
     steps:
+      - uses: actions/checkout@v3  # ✅ Required for .git to exist
       - name: Download previous Allure history artifact
         id: get-artifact
         run: |
