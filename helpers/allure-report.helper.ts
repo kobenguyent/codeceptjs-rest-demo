@@ -61,7 +61,7 @@ class AllureHelper extends Helper {
       name: `Local Machine`,
       type: "local",
       reportName: `Test report on ${Date.now().toString()}`,
-      buildName: process.env.CI_BUILD_NUMBER ?? `Local-${Date.now()}`,
+      buildName: process.env.CI_BUILD_NUMBER || `Local-${Date.now()}`,
     };
 
     writeFileSync(
