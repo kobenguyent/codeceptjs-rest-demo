@@ -71,7 +71,7 @@ jobs:
 
       # Upload new Allure history
       - name: Upload Allure history
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: ./output/allure/history
 
