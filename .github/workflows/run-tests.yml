@@ -1,66 +1,99 @@
-acceptance-tests:
-  environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        registry-url: https://registry.npmjs.org/
-    - name: Install dependencies
-      run: |
-        npm ci
-        npx playwright install
+name: Acceptance Tests
 
-    # Restore previous Allure history if available
-    - name: Download previous Allure history
-      uses: actions/download-artifact@v3
-      with:
-        name: allure-history
-        path: ./output/allure-history
+on:
+  push:
+    branches:
+      - main
+      - master
 
-    - name: Copy history to results
-      run: |
-        mkdir -p ./output/allure-results/history
-        if [ -d "./output/allure-history/history" ]; then
-          cp -R ./output/allure-history/history ./output/allure-results/
-        fi
+env:
+  NODE_VERSION: 22
+  CI_BUILD_NUMBER: ${{ github.run_number }}
 
-    - name: Run tests and generate Allure report
-      run: |
-        npm i && npx playwright install
-        npm run test
-        npm run allure-reports-generate
-        npm run allure-reports-patch
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-      env:
-        MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
-        MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
-    # Upload new Allure history
-    - name: Upload Allure history
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-history
-        path: ./output/allure-report/history
+jobs:
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org/
+      - run: npm i
+      - run: npm run lint
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v3
+  acceptance-tests:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: |
+          npm i
+          npx playwright install
 
-    - name: Check artifact directory
-      run: |
-        if [ ! -d "./output/allure" ]; then
-          echo "Artifact directory not found. Exiting."
-          exit 1
-        fi
+      # Restore previous Allure history if available
+      - name: Download previous Allure history
+        uses: actions/download-artifact@v3
+        with:
+          name: allure-history
+          path: ./output/allure/history
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './output/allure'
+      - name: Copy history to results
+        run: |
+          mkdir -p ./output/allure/history
+          if [ -d "./output/allure/history" ]; then
+            cp -R ./output/allure/history ./output/allure/
+          fi
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Run tests and generate Allure report
+        run: |
+          npm run test
+          npm run allure-reports-generate
+          npm run allure-reports-patch
+
+        env:
+          MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
+          MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
+
+      # Upload new Allure history
+      - name: Upload Allure history
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-history
+          path: ./output/allure/history
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Check artifact directory
+        run: |
+          if [ ! -d "./output/allure" ]; then
+            echo "Artifact directory not found. Exiting."
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './output/allure'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
