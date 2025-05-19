@@ -15,7 +15,7 @@ interface Allure {
 
 interface ExecutionEnvInfo {
   BASE_URL: string;
-  BROWSER: string;
+  BROWSER?: string;
 }
 
 interface ExecutorInfo {
@@ -27,7 +27,7 @@ interface ExecutorInfo {
 
 let allure: Allure;
 let outputDir: string;
-let baseUrl: string;
+let baseUrl: string = codeceptjs.config.get().helpers.REST.endpoint;
 let browserInfo: string;
 
 class AllureHelper extends Helper {
@@ -47,10 +47,15 @@ class AllureHelper extends Helper {
   }
 
   protected async _finishTest(): Promise<void> {
-    const environment: ExecutionEnvInfo = {
+    let environment: ExecutionEnvInfo = {
       BASE_URL: process.env.BASE_URL || baseUrl,
-      BROWSER: browserInfo || 'unknown',
     };
+
+    if (this.helpers.REST) {
+      environment['API'] = 'REST Helper'
+    } else {
+      environment['BROWSER'] = browserInfo
+    }
 
     const executorInfo: ExecutorInfo = {
       name: `Local Machine`,
