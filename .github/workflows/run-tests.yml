@@ -8,6 +8,7 @@ on:
 
 env:
   NODE_VERSION: 22
+  CI_BUILD_NUMBER: ${{ github.run_number }}
 
 permissions:
   contents: read
