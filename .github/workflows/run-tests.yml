@@ -48,11 +48,8 @@ jobs:
           npx playwright install
 
       # Restore previous Allure history if available
-      - name: Download previous Allure history
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-history
-          path: ./output/allure/history
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v4
 
       - name: Copy history to results
         run: |
