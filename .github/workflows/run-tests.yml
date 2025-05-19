@@ -14,6 +14,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read  # Needed for downloading artifacts from past runs via API
 
 concurrency:
   group: 'pages'
@@ -31,7 +32,31 @@ jobs:
       - run: npm i
       - run: npm run lint
 
+  download-history:
+    runs-on: ubuntu-latest
+    outputs:
+      found: ${{ steps.get-artifact.outputs.found }}
+    steps:
+      - name: Download previous Allure history artifact
+        id: get-artifact
+        run: |
+          echo "Trying to download artifact from previous run"
+          mkdir -p ./allure-history
+          gh run list --workflow="Acceptance Tests" --branch=main --limit=5 > runs.txt
+          run_id=$(cat runs.txt | grep -v ${{ github.run_id }} | awk 'NR==1{print $1}')
+          if [ -n "$run_id" ]; then
+            echo "Found previous run ID: $run_id"
+            gh run download "$run_id" -n allure-history -D ./allure-history || echo "Download failed"
+            echo "found=true" >> $GITHUB_OUTPUT
+          else
+            echo "No previous run found."
+            echo "found=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   acceptance-tests:
+    needs: [lint-check, download-history]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -42,37 +67,31 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://registry.npmjs.org/
+
       - name: Install dependencies
         run: |
           npm i
           npx playwright install
 
-      # Restore previous Allure history if available
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v4
-
-      - name: Copy history to results
+      - name: Restore Allure history
+        if: needs.download-history.outputs.found == 'true'
         run: |
-          mkdir -p ./output/allure/history
-          if [ -d "./output/allure/history" ]; then
-            cp -R ./output/allure/history ./output/allure/
-          fi
-          ll
+          mkdir -p ./output/allure
+          cp -R ./allure-history ./output/allure/history || true
 
       - name: Run tests and generate Allure report
         run: |
           npm run test
           npm run allure-reports-generate
           npm run allure-reports-patch
-
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
 
-      # Upload new Allure history
       - name: Upload Allure history
         uses: actions/upload-artifact@v4
         with:
+          name: allure-history
           path: ./output/allure/history
 
       - name: Setup Pages
@@ -85,12 +104,12 @@ jobs:
             exit 1
           fi
 
-      - name: Upload artifact
+      - name: Upload Allure report artifact
         uses: actions/upload-artifact@v4
         with:
-          path: './output/allure'
+          name: allure-report
+          path: ./output/allure
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
