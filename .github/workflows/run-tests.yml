@@ -9,6 +9,8 @@ on:
 env:
   NODE_VERSION: 22
   CI_BUILD_NUMBER: ${{ github.run_number }}
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
 
 permissions:
   contents: read
@@ -58,9 +60,7 @@ jobs:
 
   acceptance-tests:
     needs: [lint-check, download-history]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
