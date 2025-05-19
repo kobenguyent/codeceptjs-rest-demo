@@ -1,3 +1,5 @@
+import {defaultHeaders} from "./fixtures/constants";
+
 export const config: CodeceptJS.MainConfig = {
   tests: './*/*_test.ts',
   output: './output',
@@ -5,7 +7,10 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     REST: {
       endpoint: 'https://reqres.in',
-      timeout: 30_000
+      timeout: 30_000,
+      onRequest: (request) => {
+        request.headers = {...request.headers, ...defaultHeaders };
+      }
     },
     AllureReport: {
       require: './helpers/allure-report.helper.ts'
@@ -24,7 +29,7 @@ export const config: CodeceptJS.MainConfig = {
       factories: {
         user: {
           factory: "./factories/user",
-          create: (data) => ({ method: 'POST',  url: '/api/users', data })
+          create: (data) => ({ method: 'POST',  url: '/api/users', data, headers: { ...defaultHeaders } }),
         },
       }
    }
