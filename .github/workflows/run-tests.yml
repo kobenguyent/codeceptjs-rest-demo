@@ -2,9 +2,8 @@ name: Acceptance Tests
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches-ignore:
+      - '!master' # ignore gh-pages
 
 env:
   NODE_VERSION: 22
@@ -34,32 +33,8 @@ jobs:
       - run: npm i
       - run: npm run lint
 
-  download-history:
-    runs-on: ubuntu-latest
-    outputs:
-      found: ${{ steps.get-artifact.outputs.found }}
-    steps:
-      - uses: actions/checkout@v3  # ✅ Required for .git to exist
-      - name: Download previous Allure history artifact
-        id: get-artifact
-        run: |
-          echo "Trying to download artifact from previous run"
-          mkdir -p ./allure-history
-          gh run list --workflow="Acceptance Tests" --branch=main --limit=5 > runs.txt
-          run_id=$(cat runs.txt | grep -v ${{ github.run_id }} | awk 'NR==1{print $1}')
-          if [ -n "$run_id" ]; then
-            echo "Found previous run ID: $run_id"
-            gh run download "$run_id" -n allure-history -D ./allure-history || echo "Download failed"
-            echo "found=true" >> $GITHUB_OUTPUT
-          else
-            echo "No previous run found."
-            echo "found=false" >> $GITHUB_OUTPUT
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   acceptance-tests:
-    needs: [lint-check, download-history]
+    needs: [lint-check]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -76,12 +51,6 @@ jobs:
           npm i
           npx playwright install
 
-      - name: Restore Allure history
-        if: needs.download-history.outputs.found == 'true'
-        run: |
-          mkdir -p ./output/allure
-          cp -R ./allure-history ./output/allure/history || true
-
       - name: Run tests and generate Allure report
         run: |
           npm run test
@@ -91,28 +60,26 @@ jobs:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
 
-      - name: Upload Allure history
-        uses: actions/upload-artifact@v4
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
         with:
-          name: allure-history
-          path: ./output/allure/history
+          ref: gh-pages
+          path: gh-pages
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Check artifact directory
-        run: |
-          if [ ! -d "./output/allure" ]; then
-            echo "Artifact directory not found. Exiting."
-            exit 1
-          fi
-
-      - name: Upload Allure report artifact
-        uses: actions/upload-artifact@v4
+      - name: Allure Report action
+        uses: simple-elf/allure-report-action@master
+        if: always()
         with:
-          name: allure-report
-          path: ./output/allure
+          allure_results: output/allure/
+          allure_history: output/allure/history
+          keep_reports: 5
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: output/allure/history
