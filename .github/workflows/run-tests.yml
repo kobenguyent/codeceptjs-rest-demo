@@ -10,10 +10,10 @@ env:
   CI_BUILD_NUMBER: ${{ github.run_number }}
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
-  actions: read  # Needed for downloading artifacts from past runs via API
+  actions: read
 
 concurrency:
   group: 'pages'
