@@ -1,4 +1,4 @@
-name: Acceptance Tests and Allure Reports
+name: API Tests and Allure Reports
 
 on:
   push:
