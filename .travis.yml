@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-- 16
-sudo: required
-dist: trusty
-script:
-- npm i
-- npm test

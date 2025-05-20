@@ -1,1 +1,0 @@
-export const defaultHeaders = { 'x-api-key': 'reqres-free-v1' }

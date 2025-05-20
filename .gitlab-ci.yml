@@ -1,9 +1,0 @@
-image: peternguyentr/playwright-node-java:latest
-
-stages:
-  - test
-
-include:
-  - local: /_ci/api-test.yaml
-  - local: /_ci/api-load-test.yaml
-
