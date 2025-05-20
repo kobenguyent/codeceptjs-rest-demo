@@ -50,7 +50,7 @@ jobs:
       - name: Run tests and generate Allure report
         run: |
           npm run test
-          #npm run allure-reports-generate
+          npm run allure-reports-generate
           #npm run allure-reports-patch
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
@@ -66,9 +66,7 @@ jobs:
 
       - name: Allure Report action
         uses: simple-elf/allure-report-action@master
-        #uses: ./allure-report-action
         if: always()
-        #id: allure-report
         with:
           allure_results: build/allure-results
           allure_history: allure-history/allure-history
