@@ -68,7 +68,7 @@ jobs:
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          allure_results: output/allure
+          allure_results: output
           allure_report: output/allure
           allure_history: output/allure
           keep_reports: 5
