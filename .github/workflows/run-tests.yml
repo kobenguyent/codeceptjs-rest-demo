@@ -51,6 +51,7 @@ jobs:
         run: |
           npm run test
           npm run allure-reports-generate
+          #execute this command for local to access allure reports
           #npm run allure-reports-patch
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
