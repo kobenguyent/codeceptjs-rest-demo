@@ -50,8 +50,8 @@ jobs:
       - name: Run tests and generate Allure report
         run: |
           npm run test
-          npm run allure-reports-generate
-          npm run allure-reports-patch
+          #npm run allure-reports-generate
+          #npm run allure-reports-patch
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
@@ -66,16 +66,18 @@ jobs:
 
       - name: Allure Report action
         uses: simple-elf/allure-report-action@master
+        #uses: ./allure-report-action
         if: always()
+        #id: allure-report
         with:
-          allure_results: output/allure/
+          allure_results: build/allure-results
+          allure_history: allure-history/allure-history
           keep_reports: 5
 
       - name: Deploy report to Github Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: output/allure
+        uses: peaceiris/actions-gh-pages@v2
         env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history/allure-history
