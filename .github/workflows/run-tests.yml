@@ -70,8 +70,7 @@ jobs:
         if: always()
         with:
           allure_results: output
-          allure_report: output/allure
-          allure_history: output/allure
+          allure_history: allure-history/allure-history
           keep_reports: 5
 
       - name: Deploy report to Github Pages
@@ -80,4 +79,4 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: output/allure
+          PUBLISH_DIR: allure-history/allure-history
