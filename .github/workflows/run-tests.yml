@@ -53,7 +53,7 @@ jobs:
     
     uses: kobenguyent/actionsmith/.github/workflows/deploy-allure-gh-pages.yml@main
     with:
-      allure_results: 'output' 
-      allure_history: 'allure-history/allure-history'
+      allure_results: output
+      allure_history: allure-history/allure-history
       keep_reports: 5                  
-      publish_dir: 'allure-history/allure-history'
+      publish_dir: allure-history/allure-history
