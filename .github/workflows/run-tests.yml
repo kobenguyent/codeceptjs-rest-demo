@@ -21,15 +21,7 @@ concurrency:
 
 jobs:
   lint-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: https://registry.npmjs.org/
-      - run: npm i
-      - run: npm run lint
+    uses: kobenguyent/actionsmith/.github/workflows/lint-check.yml@main
 
   acceptance-tests:
     needs: [lint-check]
