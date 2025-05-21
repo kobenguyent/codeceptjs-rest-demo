@@ -1,10 +1,9 @@
-name: Publish npm Package using centralized workflows
+name: Use Central Publish Workflow
 
 on:
   push:
     branches:
       - master
-      - main
 
 jobs:
   call-publish:
