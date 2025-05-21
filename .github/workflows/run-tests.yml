@@ -54,6 +54,4 @@ jobs:
       allure_results: 'output' 
       allure_history: 'allure-history/allure-history'
       keep_reports: 5                  
-      publish_dir: 'allure-history/allure-history'    
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: 'allure-history/allure-history'
