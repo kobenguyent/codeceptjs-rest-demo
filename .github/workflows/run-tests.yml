@@ -48,27 +48,12 @@ jobs:
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
-
-      - name: Get Allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Allure Report action
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: output
-          allure_history: allure-history/allure-history
-          keep_reports: 5
-
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history/allure-history
+  generate-and-deploy-allure-report:
+    uses: kobenguyent/actionsmith/.github/workflows/allure-report.yml@main
+    with:
+      allure_results: 'output' 
+      allure_history: 'allure-history/allure-history'
+      keep_reports: 5                  
+      publish_dir: 'allure-history/allure-history'    
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
