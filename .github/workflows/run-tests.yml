@@ -49,7 +49,7 @@ jobs:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
   generate-and-deploy-allure-report:
-    uses: kobenguyent/actionsmith/.github/workflows/allure-report.yml@main
+    uses: kobenguyent/actionsmith/.github/workflows/deploy-allure-gh-pages.yml@main
     with:
       allure_results: 'output' 
       allure_history: 'allure-history/allure-history'
