@@ -49,6 +49,8 @@ jobs:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
   generate-and-deploy-allure-report:
+    needs: [acceptance-tests]
+    
     uses: kobenguyent/actionsmith/.github/workflows/deploy-allure-gh-pages.yml@main
     with:
       allure_results: 'output' 
