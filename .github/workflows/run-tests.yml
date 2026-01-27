@@ -48,6 +48,7 @@ jobs:
         env:
           MAILINATOR_TOKEN: ${{ secrets.MAILINATOR_TOKEN }}
           MAILINATOR_DOMAIN: ${{ secrets.MAILINATOR_DOMAIN }}
+          REQRES_TOKEN: ${{ secrets.REQRES_TOKEN }}
   generate-and-deploy-allure-report:
     needs: [acceptance-tests]
     
