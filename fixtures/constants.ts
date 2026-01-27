@@ -1,1 +1,1 @@
-export const defaultHeaders = { 'x-api-key': 'reqres-free-v1' }
+export const defaultHeaders = { 'x-api-key': process.env.REQRES_TOKEN }
